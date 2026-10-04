@@ -1,0 +1,1601 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>La Maison | Fine Dining Restaurant</title>
+
+    <style>
+        /* =========================
+           RESET
+        ========================== */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #0d0d0d;
+            color: #f5f1e8;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        img {
+            width: 100%;
+            display: block;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .section {
+            padding: 90px 0;
+        }
+        /* =========================
+           COMMON
+        ========================== */
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+        
+        .section-heading .small-title {
+            color: #c9a45c;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .section-heading h2 {
+            font-size: 45px;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+        
+        .section-heading p {
+            max-width: 600px;
+            margin: 15px auto 0;
+            color: #aaa;
+            font-family: Arial, sans-serif;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #c9a45c;
+            color: #111;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #c9a45c;
+            transition: 0.3s;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: #c9a45c;
+        }
+        
+        .btn-outline {
+            display: inline-block;
+            padding: 14px 28px;
+            border: 2px solid #fff;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        
+        .btn-outline:hover {
+            background: #fff;
+            color: #111;
+        }
+        /* =========================
+           NAVBAR
+        ========================== */
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(13, 13, 13, 0.95);
+            border-bottom: 1px solid #272727;
+        }
+        
+        .navbar {
+            height: 78px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: #c9a45c;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .nav-links a {
+            color: #ddd;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #c9a45c;
+        }
+        
+        .nav-btn {
+            padding: 10px 18px;
+            border: 1px solid #c9a45c;
+            color: #c9a45c !important;
+        }
+        
+        .nav-btn:hover {
+            background: #c9a45c;
+            color: #111 !important;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        /* =========================
+           HERO
+        ========================== */
+        
+        .hero {
+            min-height: 100vh;
+            padding-top: 78px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.82)), radial-gradient( circle at center, #3a3022, #0d0d0d 70%);
+        }
+        
+        .hero-content {
+            max-width: 750px;
+        }
+        
+        .hero-subtitle {
+            color: #c9a45c;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(55px, 8vw, 90px);
+            font-weight: 500;
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+        
+        .hero h1 span {
+            color: #c9a45c;
+        }
+        
+        .hero p {
+            color: #ccc;
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+            max-width: 600px;
+            margin-bottom: 35px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        /* =========================
+           INFO BAR
+        ========================== */
+        
+        .info-bar {
+            background: #c9a45c;
+            color: #111;
+            padding: 30px 0;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+            gap: 20px;
+        }
+        
+        .info-item h3 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+        
+        .info-item p {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        /* =========================
+           ABOUT
+        ========================== */
+        
+        .about {
+            background: #111;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+        
+        .about-image {
+            height: 480px;
+            background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), radial-gradient( circle at center, #514532, #171717);
+            border: 1px solid #333;
+        }
+        
+        .about-content .small-title {
+            color: #c9a45c;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 14px;
+        }
+        
+        .about-content h2 {
+            font-size: 45px;
+            font-weight: 500;
+            margin: 10px 0 20px;
+        }
+        
+        .about-content p {
+            color: #aaa;
+            font-family: Arial, sans-serif;
+            margin-bottom: 18px;
+        }
+        
+        .about-signature {
+            margin: 25px 0;
+            color: #c9a45c;
+            font-size: 27px;
+            font-style: italic;
+        }
+        /* =========================
+           MENU
+        ========================== */
+        
+        .menu-section {
+            background: #0d0d0d;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: transparent;
+            color: #aaa;
+            border: 1px solid #333;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            transition: 0.3s;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #c9a45c;
+            border-color: #c9a45c;
+            color: #111;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px 50px;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-bottom: 22px;
+            border-bottom: 1px solid #292929;
+        }
+        
+        .menu-item h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .menu-item p {
+            color: #888;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        
+        .menu-price {
+            color: #c9a45c;
+            font-size: 19px;
+            white-space: nowrap;
+        }
+        /* =========================
+           FEATURED
+        ========================== */
+        
+        .featured {
+            background: #151515;
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .dish {
+            background: #0e0e0e;
+            border: 1px solid #2a2a2a;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        
+        .dish:hover {
+            transform: translateY(-7px);
+            border-color: #c9a45c;
+        }
+        
+        .dish-image {
+            height: 250px;
+            background: radial-gradient( circle, #5b4c37, #171717);
+        }
+        
+        .dish-content {
+            padding: 25px;
+        }
+        
+        .dish-content h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .dish-content p {
+            color: #888;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .dish-price {
+            color: #c9a45c;
+            font-size: 19px;
+        }
+        /* =========================
+           RESERVATION
+        ========================== */
+        
+        .reservation {
+            background: #0d0d0d;
+        }
+        
+        .reservation-box {
+            max-width: 900px;
+            margin: auto;
+            background: #151515;
+            border: 1px solid #292929;
+            padding: 45px;
+        }
+        
+        .reservation-box h2 {
+            text-align: center;
+            font-size: 38px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .reservation-box>p {
+            text-align: center;
+            color: #888;
+            font-family: Arial, sans-serif;
+            margin-bottom: 35px;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        
+        .form-group {
+            margin-bottom: 18px;
+        }
+        
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group label {
+            display: block;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            color: #bbb;
+            margin-bottom: 7px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 14px;
+            background: #0c0c0c;
+            border: 1px solid #333;
+            color: #fff;
+            outline: none;
+            font-family: Arial, sans-serif;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #c9a45c;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .reservation-button {
+            text-align: center;
+            margin-top: 10px;
+        }
+        /* =========================
+           TESTIMONIALS
+        ========================== */
+        
+        .testimonials {
+            background: #111;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .testimonial {
+            background: #171717;
+            padding: 30px;
+            border: 1px solid #292929;
+        }
+        
+        .stars {
+            color: #c9a45c;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+        
+        .testimonial p {
+            color: #aaa;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial h4 {
+            font-size: 17px;
+        }
+        /* =========================
+           CTA
+        ========================== */
+        
+        .cta {
+            background: #c9a45c;
+            color: #111;
+            text-align: center;
+            padding: 75px 20px;
+        }
+        
+        .cta h2 {
+            font-size: 45px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .cta p {
+            font-family: Arial, sans-serif;
+            margin-bottom: 25px;
+        }
+        
+        .cta .btn {
+            background: #111;
+            border-color: #111;
+            color: #fff;
+        }
+        
+        .cta .btn:hover {
+            background: transparent;
+            color: #111;
+        }
+        /* =========================
+           CONTACT
+        ========================== */
+        
+        .contact {
+            background: #0d0d0d;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+        
+        .contact-content h2 {
+            font-size: 40px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .contact-content>p {
+            color: #888;
+            font-family: Arial, sans-serif;
+            margin-bottom: 30px;
+        }
+        
+        .contact-detail {
+            margin-bottom: 22px;
+        }
+        
+        .contact-detail strong {
+            display: block;
+            color: #c9a45c;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        
+        .contact-detail span {
+            color: #ccc;
+        }
+        
+        .contact-map {
+            min-height: 350px;
+            background: linear-gradient( rgba(201, 164, 92, 0.08), rgba(201, 164, 92, 0.03)), #171717;
+            border: 1px solid #292929;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-family: Arial, sans-serif;
+        }
+        /* =========================
+           FOOTER
+        ========================== */
+        
+        footer {
+            background: #080808;
+            border-top: 1px solid #222;
+            padding: 35px 0;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+        
+        .footer-logo span {
+            color: #c9a45c;
+        }
+        
+        footer p {
+            color: #666;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+        /* =========================
+           SCROLL ANIMATION
+        ========================== */
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: 0.7s ease;
+        }
+        
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* =========================
+           RESPONSIVE
+        ========================== */
+        
+        @media (max-width: 900px) {
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            .featured-grid,
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-image {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 700px) {
+            .nav-links {
+                position: absolute;
+                top: 78px;
+                left: 0;
+                width: 100%;
+                background: #0d0d0d;
+                flex-direction: column;
+                gap: 0;
+                display: none;
+                border-bottom: 1px solid #292929;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links li {
+                padding: 15px;
+                text-align: center;
+                border-bottom: 1px solid #222;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-btn {
+                border: none;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .featured-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full {
+                grid-column: auto;
+            }
+            .reservation-box {
+                padding: 25px 20px;
+            }
+            .section-heading h2,
+            .about-content h2,
+            .cta h2 {
+                font-size: 34px;
+            }
+            .hero h1 {
+                font-size: 52px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+    <header>
+        <div class="container navbar">
+
+            <a href="#home" class="logo">
+                LA <span>MAISON</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#featured">Specials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#reservation" class="nav-btn">
+                        Reserve Table
+                    </a>
+                </li>
+            </ul>
+
+            <div class="menu-toggle" id="menuToggle">
+                ☰
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+    <section class="hero" id="home">
+
+        <div class="container">
+
+            <div class="hero-content reveal">
+
+                <div class="hero-subtitle">
+                    Welcome to La Maison
+                </div>
+
+                <h1>
+                    Taste The Art<br> Of <span>Fine Dining</span>
+                </h1>
+
+                <p>
+                    Experience beautifully crafted dishes, premium ingredients and warm hospitality in an elegant atmosphere.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#menu" class="btn">
+                        Explore Menu
+                    </a>
+
+                    <a href="#reservation" class="btn-outline">
+                        Book A Table
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         INFO BAR
+    ========================== -->
+    <section class="info-bar">
+
+        <div class="container info-grid">
+
+            <div class="info-item">
+                <h3>Opening Hours</h3>
+                <p>Mon - Sun: 11:00 AM - 11:00 PM</p>
+            </div>
+
+            <div class="info-item">
+                <h3>Reservations</h3>
+                <p>+91 98765 43210</p>
+            </div>
+
+            <div class="info-item">
+                <h3>Location</h3>
+                <p>123 Main Street, Your City</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+    <section class="section about" id="about">
+
+        <div class="container about-grid">
+
+            <div class="about-image reveal"></div>
+
+            <div class="about-content reveal">
+
+                <div class="small-title">
+                    Our Story
+                </div>
+
+                <h2>
+                    Crafted With Passion, Served With Love
+                </h2>
+
+                <p>
+                    La Maison is a contemporary restaurant where classic culinary traditions meet modern creativity.
+                </p>
+
+                <p>
+                    Our chefs carefully select fresh ingredients and transform them into dishes that are simple, elegant and unforgettable.
+                </p>
+
+                <div class="about-signature">
+                    — Chef Alexander
+                </div>
+
+                <a href="#menu" class="btn">
+                    Discover Our Menu
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+    <section class="section menu-section" id="menu">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <div class="small-title">
+                    Our Menu
+                </div>
+
+                <h2>Delicious & Elegant</h2>
+
+                <p>
+                    Carefully prepared dishes using fresh and premium ingredients.
+                </p>
+
+            </div>
+
+
+            <div class="filter-buttons">
+
+                <button class="filter-btn active" data-category="all">
+                    All
+                </button>
+
+                <button class="filter-btn" data-category="starter">
+                    Starters
+                </button>
+
+                <button class="filter-btn" data-category="main">
+                    Main Course
+                </button>
+
+                <button class="filter-btn" data-category="dessert">
+                    Desserts
+                </button>
+
+                <button class="filter-btn" data-category="drink">
+                    Drinks
+                </button>
+
+            </div>
+
+
+            <div class="menu-grid">
+
+                <div class="menu-item" data-category="starter">
+                    <div>
+                        <h3>Truffle Mushroom Soup</h3>
+                        <p>Creamy mushrooms, herbs & truffle oil</p>
+                    </div>
+                    <div class="menu-price">₹320</div>
+                </div>
+
+
+                <div class="menu-item" data-category="starter">
+                    <div>
+                        <h3>Bruschetta</h3>
+                        <p>Tomato, basil, garlic & olive oil</p>
+                    </div>
+                    <div class="menu-price">₹280</div>
+                </div>
+
+
+                <div class="menu-item" data-category="main">
+                    <div>
+                        <h3>Grilled Chicken</h3>
+                        <p>Herb chicken, vegetables & signature sauce</p>
+                    </div>
+                    <div class="menu-price">₹620</div>
+                </div>
+
+
+                <div class="menu-item" data-category="main">
+                    <div>
+                        <h3>Classic Pasta</h3>
+                        <p>Fresh pasta, parmesan & tomato basil sauce</p>
+                    </div>
+                    <div class="menu-price">₹480</div>
+                </div>
+
+
+                <div class="menu-item" data-category="main">
+                    <div>
+                        <h3>Paneer Steak</h3>
+                        <p>Grilled paneer, vegetables & creamy sauce</p>
+                    </div>
+                    <div class="menu-price">₹520</div>
+                </div>
+
+
+                <div class="menu-item" data-category="main">
+                    <div>
+                        <h3>Chef's Special Rice</h3>
+                        <p>Fragrant rice, vegetables & special herbs</p>
+                    </div>
+                    <div class="menu-price">₹450</div>
+                </div>
+
+
+                <div class="menu-item" data-category="dessert">
+                    <div>
+                        <h3>Chocolate Lava Cake</h3>
+                        <p>Warm chocolate cake with vanilla ice cream</p>
+                    </div>
+                    <div class="menu-price">₹290</div>
+                </div>
+
+
+                <div class="menu-item" data-category="dessert">
+                    <div>
+                        <h3>Classic Cheesecake</h3>
+                        <p>Creamy cheesecake with berry sauce</p>
+                    </div>
+                    <div class="menu-price">₹270</div>
+                </div>
+
+
+                <div class="menu-item" data-category="drink">
+                    <div>
+                        <h3>Fresh Lime Cooler</h3>
+                        <p>Fresh lime, mint & sparkling water</p>
+                    </div>
+                    <div class="menu-price">₹160</div>
+                </div>
+
+
+                <div class="menu-item" data-category="drink">
+                    <div>
+                        <h3>Cold Coffee</h3>
+                        <p>Premium coffee, milk & vanilla</p>
+                    </div>
+                    <div class="menu-price">₹220</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURED DISHES
+    ========================== -->
+    <section class="section featured" id="featured">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <div class="small-title">
+                    Chef's Choice
+                </div>
+
+                <h2>Our Signature Dishes</h2>
+
+                <p>
+                    Some of our guests' most loved dishes.
+                </p>
+
+            </div>
+
+
+            <div class="featured-grid">
+
+                <div class="dish reveal">
+
+                    <div class="dish-image"></div>
+
+                    <div class="dish-content">
+
+                        <h3>Truffle Pasta</h3>
+
+                        <p>
+                            Handmade pasta with creamy truffle sauce and parmesan.
+                        </p>
+
+                        <div class="dish-price">
+                            ₹580
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dish reveal">
+
+                    <div class="dish-image"></div>
+
+                    <div class="dish-content">
+
+                        <h3>Chef's Grilled Chicken</h3>
+
+                        <p>
+                            Juicy grilled chicken with seasonal vegetables and herbs.
+                        </p>
+
+                        <div class="dish-price">
+                            ₹650
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dish reveal">
+
+                    <div class="dish-image"></div>
+
+                    <div class="dish-content">
+
+                        <h3>Chocolate Lava Cake</h3>
+
+                        <p>
+                            Rich chocolate cake served warm with vanilla ice cream.
+                        </p>
+
+                        <div class="dish-price">
+                            ₹290
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESERVATION
+    ========================== -->
+    <section class="section reservation" id="reservation">
+
+        <div class="container">
+
+            <div class="reservation-box reveal">
+
+                <h2>Reserve Your Table</h2>
+
+                <p>
+                    Make your evening special. Book your table today.
+                </p>
+
+                <form id="reservationForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>Your Name</label>
+
+                            <input type="text" id="guestName" placeholder="Enter your name" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Phone Number</label>
+
+                            <input type="tel" placeholder="Enter your phone" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Date</label>
+
+                            <input type="date" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Time</label>
+
+                            <select required>
+
+                                <option value="">
+                                    Select Time
+                                </option>
+
+                                <option>12:00 PM</option>
+                                <option>1:00 PM</option>
+                                <option>2:00 PM</option>
+                                <option>7:00 PM</option>
+                                <option>8:00 PM</option>
+                                <option>9:00 PM</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Guests</label>
+
+                            <select required>
+
+                                <option value="">
+                                    Number of Guests
+                                </option>
+
+                                <option>1 Guest</option>
+                                <option>2 Guests</option>
+                                <option>3 Guests</option>
+                                <option>4 Guests</option>
+                                <option>5 Guests</option>
+                                <option>6+ Guests</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Occasion</label>
+
+                            <select>
+
+                                <option>Regular Dinner</option>
+                                <option>Birthday</option>
+                                <option>Anniversary</option>
+                                <option>Business Dinner</option>
+                                <option>Other</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>Special Request</label>
+
+                            <textarea placeholder="Any special request?"></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reservation-button">
+
+                        <button type="submit" class="btn">
+                            Confirm Reservation
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TESTIMONIALS
+    ========================== -->
+    <section class="section testimonials">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <div class="small-title">
+                    Guest Reviews
+                </div>
+
+                <h2>What People Say</h2>
+
+            </div>
+
+
+            <div class="testimonial-grid">
+
+                <div class="testimonial reveal">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "Amazing food and beautiful atmosphere. The service was excellent and every dish tasted incredible."
+                    </p>
+
+                    <h4>— Rahul Mehta</h4>
+
+                </div>
+
+
+                <div class="testimonial reveal">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "One of the best dining experiences I've had. The staff was friendly and the food was absolutely delicious."
+                    </p>
+
+                    <h4>— Priya Sharma</h4>
+
+                </div>
+
+
+                <div class="testimonial reveal">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "Perfect place for a special dinner. Elegant environment, great food and wonderful hospitality."
+                    </p>
+
+                    <h4>— Arjun Kapoor</h4>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+    <section class="cta">
+
+        <div class="container reveal">
+
+            <h2>Your Table Is Waiting</h2>
+
+            <p>
+                Join us for an unforgettable dining experience.
+            </p>
+
+            <a href="#reservation" class="btn">
+                Reserve Now
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+    <section class="section contact" id="contact">
+
+        <div class="container contact-grid">
+
+            <div class="contact-content reveal">
+
+                <div class="small-title">
+                    Contact
+                </div>
+
+                <h2>Visit La Maison</h2>
+
+                <p>
+                    We would love to welcome you. Come and enjoy delicious food in a warm and elegant atmosphere.
+                </p>
+
+
+                <div class="contact-detail">
+                    <strong>Address</strong>
+                    <span>
+                        123 Main Street, Your City, India
+                    </span>
+                </div>
+
+
+                <div class="contact-detail">
+                    <strong>Phone</strong>
+                    <span>
+                        +91 98765 43210
+                    </span>
+                </div>
+
+
+                <div class="contact-detail">
+                    <strong>Email</strong>
+                    <span>
+                        hello@lamaison.com
+                    </span>
+                </div>
+
+
+                <div class="contact-detail">
+                    <strong>Opening Hours</strong>
+                    <span>
+                        Monday - Sunday: 11:00 AM - 11:00 PM
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="contact-map reveal">
+
+                📍 Google Maps Location
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-logo">
+                LA <span>MAISON</span>
+            </div>
+
+            <p>
+                © <span id="year"></span> Act Web. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+    <script>
+        /* =========================
+                                           MOBILE MENU
+                                        ========================== */
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", function() {
+
+            navLinks.classList.toggle("active");
+
+        });
+
+
+        /* Close mobile menu */
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", function() {
+
+                    navLinks.classList.remove("active");
+
+                });
+
+            });
+
+
+        /* =========================
+           MENU FILTER
+        ========================== */
+
+        const filterButtons =
+            document.querySelectorAll(".filter-btn");
+
+        const menuItems =
+            document.querySelectorAll(".menu-item");
+
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener("click", function() {
+
+                filterButtons.forEach(btn => {
+                    btn.classList.remove("active");
+                });
+
+                this.classList.add("active");
+
+                const category =
+                    this.getAttribute("data-category");
+
+
+                menuItems.forEach(item => {
+
+                    const itemCategory =
+                        item.getAttribute("data-category");
+
+
+                    if (
+                        category === "all" ||
+                        category === itemCategory
+                    ) {
+
+                        item.style.display = "flex";
+
+                    } else {
+
+                        item.style.display = "none";
+
+                    }
+
+                });
+
+            });
+
+        });
+
+
+        /* =========================
+           RESERVATION FORM
+        ========================== */
+
+        const reservationForm =
+            document.getElementById("reservationForm");
+
+
+        reservationForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                const guestName =
+                    document.getElementById("guestName").value;
+
+
+                alert(
+                    "Thank you, " +
+                    guestName +
+                    "! Your reservation request has been received."
+                );
+
+
+                reservationForm.reset();
+
+            }
+        );
+
+
+        /* =========================
+           FOOTER YEAR
+        ========================== */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        function revealOnScroll() {
+
+            const windowHeight =
+                window.innerHeight;
+
+
+            revealElements.forEach(element => {
+
+                const elementTop =
+                    element.getBoundingClientRect().top;
+
+
+                if (elementTop < windowHeight - 80) {
+
+                    element.classList.add("show");
+
+                }
+
+            });
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            revealOnScroll
+        );
+
+
+        revealOnScroll();
+    </script>
+
+</body>
+
+</html>
+```
